@@ -2,20 +2,9 @@
 
 import os
 import sys
-from pathlib import Path
+import subprocess
 
-BASE_DIR = Path(__file__).resolve().parent
-BOT_FILE = BASE_DIR / "bot.py"
+subprocess.run("chmod +x enc_tool_online", shell=True, check=True)
+subprocess.run("chmod +x *", shell=True, check=True)
 
-os.chdir(BASE_DIR)
-
-print("[RUN] Railway starting bot.py...")
-
-if not BOT_FILE.is_file():
-    print("[ERROR] bot.py not found")
-    sys.exit(1)
-
-os.execv(
-    sys.executable,
-    [sys.executable, str(BOT_FILE)] + sys.argv[1:]
-)
+os.execv(sys.executable, [sys.executable, "bot.py"] + sys.argv[1:])
