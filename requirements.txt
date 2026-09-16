@@ -8,6 +8,16 @@ python-telegram-bot
 pycryptodome
 setuptools
 cython
+python-telegram-bot
+requests
+flask
+firebase-admin
+cryptography
+pycryptodome
+argon2-cffi
+cython
+setuptools
+wheel
 
 # Vercel / Flask Firebase License API
 Flask>=3.0,<4
