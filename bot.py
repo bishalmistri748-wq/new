@@ -40,9 +40,9 @@ from telegram.ext import (
 )
 
 BASE_DIR = Path(__file__).resolve().parent
-ENC_TOOL = BASE_DIR / "enc_tool_online"
+ENC_TOOL = BASE_DIR / "enc_tool_online.py"
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8339077391:AAGRAE4CK419W5C5rrwwDMFJO0cr0DhPDPo").strip()
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8339077391:AAESvQpqIDBYnwhpxbG4TvFrDQ3ofNUnpP0").strip()
 SERVER_URL = os.environ.get("ENC_SERVER_URL", "https://vercel-firebase-license-api.vercel.app").strip().rstrip("/")
 ADMIN_SECRET = os.environ.get("ADMIN_SECRET", "SlFVoNDazRPb3A0n1DvWmXuEdcfoIfiMOjL7diW-hVLR-u4DC9MgqkpVK8JSN2NyUrvYVBC-wviN5D6KBoIzlwRvsw4VC9hYR9yi2V6yPzUV4sHhClDRqPVufwqivGXGEUxX9gY74ZxS9m1jSrNq9jP_PWzJwecJox0BeGBS9DA3yuwuVzTG5XLqI2r6pXEaY4CgNNbhz0jkpoKVzWiwnEhAbgFhTVHpaafmXJo1Ipx0PIVklKZdmjVf1t1Pgt-IaYC1ZVq394JxmT6uKTjGdd1Cm7RqOvJyEYNtlx5MfoRglVBJTbIRpSVGUN7cL-bfhGKNR3tarOSZI4eM9EL9rQ").strip()
 ADMIN_ID_RAW = os.environ.get("ADMIN_TELEGRAM_ID", "5159972988").strip()
@@ -338,8 +338,9 @@ async def run_encrypt(input_path: Path, key: str, app_id: str, original_filename
     env = os.environ.copy()
     env["ENC_SERVER_URL"] = SERVER_URL
 
-    # Run the compiled ELF binary directly — no Python source launcher.
+    # Run the original Python encryption tool directly.
     cmd = [
+        sys.executable,
         str(ENC_TOOL),
         str(input_path),
         "--key",
@@ -1060,7 +1061,7 @@ def build_application():
     if not SERVER_URL:
         raise RuntimeError("ENC_SERVER_URL is missing.")
     if not ENC_TOOL.exists():
-        raise RuntimeError(f"enc_tool_online binary not found beside bot.py: {ENC_TOOL}")
+        raise RuntimeError(f"enc_tool_online.py not found beside bot.py: {ENC_TOOL}")
 
     app = Application.builder().token(BOT_TOKEN).build()
 
