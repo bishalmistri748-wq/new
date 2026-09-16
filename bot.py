@@ -42,7 +42,7 @@ from telegram.ext import (
 BASE_DIR = Path(__file__).resolve().parent
 ENC_TOOL = BASE_DIR / "enc_tool_online.py"
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8339077391:AAESvQpqIDBYnwhpxbG4TvFrDQ3ofNUnpP0").strip()
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8339077391:AAGrBWVz5AKBvBHbJpQspkyqb75la3I0LuQ").strip()
 SERVER_URL = os.environ.get("ENC_SERVER_URL", "https://vercel-firebase-license-api.vercel.app").strip().rstrip("/")
 ADMIN_SECRET = os.environ.get("ADMIN_SECRET", "SlFVoNDazRPb3A0n1DvWmXuEdcfoIfiMOjL7diW-hVLR-u4DC9MgqkpVK8JSN2NyUrvYVBC-wviN5D6KBoIzlwRvsw4VC9hYR9yi2V6yPzUV4sHhClDRqPVufwqivGXGEUxX9gY74ZxS9m1jSrNq9jP_PWzJwecJox0BeGBS9DA3yuwuVzTG5XLqI2r6pXEaY4CgNNbhz0jkpoKVzWiwnEhAbgFhTVHpaafmXJo1Ipx0PIVklKZdmjVf1t1Pgt-IaYC1ZVq394JxmT6uKTjGdd1Cm7RqOvJyEYNtlx5MfoRglVBJTbIRpSVGUN7cL-bfhGKNR3tarOSZI4eM9EL9rQ").strip()
 ADMIN_ID_RAW = os.environ.get("ADMIN_TELEGRAM_ID", "5159972988").strip()
