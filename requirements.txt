@@ -1,0 +1,13 @@
+# ============================================
+# COMPLETE PROJECT REQUIREMENTS
+# ============================================
+# Telegram bot
+python-telegram-bot
+
+# Encryption / native build
+pycryptodome
+cython
+
+# Vercel / Flask Firebase License API
+Flask>=3.0,<4
+firebase-admin>=7.5,<8
